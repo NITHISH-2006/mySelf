@@ -17,16 +17,19 @@
 
 <style>
 :root {
-  --ink:    #0a0a0a;
-  --ink-2:  #111;
-  --paper:  #f5f0e8;
-  --white:  #fafafa;
-  --mid:    #888;
-  --line:   rgba(255,255,255,0.08);
+  --ink:    #0a0a0f;          /* deep black with faint multiverse purple undertone */
+  --ink-2:  #12121a;          /* panels, cards, marquee bg */
+  --paper:  #f5f8ff;          /* light mode bg – soft blue-white */
+  --white:  #f0f4ff;          /* crisp text */
+  --mid:    #a0a8c0;          /* secondary text */
+  --line:   rgba(240,244,255,0.09); 
 
-  --red:    #e8272b;
-  --yellow: #f5c518;
-  --blue:   #1a4fff;
+  --red:    #ff1744;          /* Miles vibrant red – primary accent (suit emblem energy) */
+  --teal:   #00d4ff;          /* electric teal/blue – spider-sense, multiverse glow */
+  --yellow: #ffca28;          /* subtle gold for rare multiverse pops (keep minimal) */
+
+  --glow-red:  rgba(255,23,68,0.45);   /* hover glows */
+  --glow-teal: rgba(0,212,255,0.35);
 
   --font-display: 'Bebas Neue', sans-serif;
   --font-hand:    'Caveat', cursive;
@@ -35,15 +38,28 @@
 }
 
 html.light {
-  --ink:   #f0ebe0;
-  --ink-2: #e8e2d5;
-  --white: #111111;
-  --mid:   #555555;
-  --line:  rgba(0,0,0,0.08);
+  --ink:   #f0f4ff;           /* light bg with subtle blue tint */
+  --ink-2: #e8ecff;
+  --white: #0a0a1f;           /* dark text for readability */
+  --mid:   #4a5570;
+  --line:  rgba(10,10,31,0.08);
 
-  --red:    #d41f23;
+  --red:    #d50032;          /* darker red for light mode */
+  --teal:   #0088cc;          /* muted teal */
   --yellow: #d4a017;
-  --blue:   #1040e0;
+
+  --glow-red:  rgba(213,0,50,0.3);
+  --glow-teal: rgba(0,136,204,0.25);
+}
+
+html.light .proj-num,
+html.light .chapter,
+html.light .skills-number,
+html.light .marquee-item,
+html.light .proj-year,
+html.light .proj-toggle {
+  color: #0a0a1f !important;
+  opacity: 1;
 }
 
 #ink-splash {
@@ -398,6 +414,25 @@ a { color: inherit; text-decoration: none; }
   background: var(--red);
   animation: blink 1.4s step-end infinite;
 }
+
+.pop-teal { color: var(--teal); background: var(--glow-teal); border-color: var(--teal); }
+
+.project-row-header:hover,
+.interest-card:hover {
+  box-shadow: 0 0 20px var(--glow-red);
+  border-color: var(--red);
+  transition: box-shadow 0.3s ease;
+}
+
+.project-row.open .project-row-header,
+.proj-toggle:hover {
+  border-color: var(--teal);
+  box-shadow: 0 0 15px var(--glow-teal);
+}
+
+/* .avatar-panel:hover::before {
+  box-shadow: 0 0 25px var(--glow-teal);
+} */
 
 .nav-links {
   display: flex;
@@ -1802,7 +1837,7 @@ html.light .learning-tag { border-color: rgba(0,0,0,0.15); color: rgba(0,0,0,0.4
             <span class="skill-tag" style="color:var(--yellow);border-color:rgba(245,197,24,0.3);background:rgba(245,197,24,0.05);">Java</span>
             <span class="skill-tag" style="color:var(--yellow);border-color:rgba(245,197,24,0.3);background:rgba(245,197,24,0.05);">Prisma</span>
           </div>
-        </di v>
+        </div>
 
         <!-- ML / AI -->
         <div class="skill-group skill-group-ml reveal reveal-delay-2">
@@ -2347,24 +2382,24 @@ document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
 const MARQUEE_ITEMS = [
   { t: 'React',        c: 'pop-red'    },
   { t: 'TypeScript',   c: ''           },
-  { t: 'OAuth 2.0',    c: 'pop-blue'   },
-  { t: 'Python',       c: ''           },
+  { t: 'OAuth 2.0',    c: 'pop-teal'   },  // ← change to teal
+  { t: 'Python',       c: 'pop-teal'   },
   { t: 'Node.js',      c: 'pop-red'    },
-  { t: 'Scikit-learn', c: 'pop-yellow' },
+  { t: 'Scikit-learn', c: 'pop-teal'   },
   { t: 'PostgreSQL',   c: ''           },
-  { t: 'Java',         c: 'pop-blue'   },
-  { t: 'XGBoost',      c: ''           },
+  { t: 'Java',         c: 'pop-teal'   },
+  { t: 'XGBoost',      c: 'pop-teal'   },
   { t: 'JWT / PKCE',   c: 'pop-red'    },
-  { t: 'Solidity',    c: 'pop-blue'   },
-  { t: 'Qiskit',      c: 'pop-yellow' },
-  { t: 'Web3',        c: 'pop-red'    },
+  { t: 'Solidity',     c: 'pop-red'    },  // crypto red energy
+  { t: 'Qiskit',       c: 'pop-teal'   },
+  { t: 'Web3',         c: 'pop-red'    },
   { t: 'Rust',        c: '' },
   { t: 'Streamlit',    c: ''           },
-  { t: 'Docker',       c: 'pop-blue'   },
+  { t: 'Docker',       c: 'pop-red'   },
   { t: 'DSA',          c: ''           },
-  { t: 'Cryptography', c: 'pop-yellow' },
+  { t: 'Cryptography', c: 'pop-teal' },
   { t: 'SMOTE',        c: ''           },
-  { t: 'dark mode only', c: 'pop-blue' },
+  { t: 'dark mode only', c: 'pop-red' },
 ];
 const mi = document.getElementById('marquee-inner');
 if (mi) {
