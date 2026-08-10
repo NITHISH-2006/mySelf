@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:image" content="https://nithish-chandrasekaran.vercel.app/mySelf/Myimg2.png" />
   <title>NITHISH CHANDRASEKARAN — Full Stack Developer</title>
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Cpolygon points='5,4 5,28 10,28 10,12 22,28 27,28 27,4 22,4 22,20 10,4' fill='%23e8272b'/%3E%3Crect x='0' y='0' width='32' height='2' fill='%23e8272b' opacity='0.4'/%3E%3Crect x='0' y='30' width='32' height='2' fill='%23e8272b' opacity='0.4'/%3E%3C/svg%3E" />
@@ -42,6 +43,7 @@
       /* electric teal/blue – spider-sense, multiverse glow */
       --yellow: #ffca28;
       /* subtle gold for rare multiverse pops (keep minimal) */
+      --blue: #2563eb;
 
       --glow-red: rgba(255, 23, 68, 0.45);
       /* hover glows */
@@ -67,6 +69,7 @@
       --teal: #0088cc;
       /* muted teal */
       --yellow: #d4a017;
+      --blue: #1d4ed8;
 
       --glow-red: rgba(213, 0, 50, 0.3);
       --glow-teal: rgba(0, 136, 204, 0.25);
@@ -363,6 +366,24 @@
       color: rgba(0, 0, 0, 0.2);
     }
 
+    html.light .stat-num {
+  color: #0a0a1f !important;
+}
+    html.light .stat-num-red {
+  color: #d50032 !important;
+}
+
+    html.light .stat-num-yellow {
+  color: #b45309 !important; /* Visible yellow/gold in light mode */
+}
+
+  html.light .stat-num-blue {
+  color: #1d4ed8 !important; /* Visible blue for Public Repos count */
+}
+
+
+
+
     html.light .stamp.white {
       color: rgba(0, 0, 0, 0.55);
       border-color: rgba(0, 0, 0, 0.2);
@@ -378,8 +399,22 @@
     }
 
     html.light .stat-label {
-      color: rgba(0, 0, 0, 0.3);
+      /* color: rgba(0, 0, 0, 0.3); */
+      color: #1e293b !important; /* Crisp dark slate for "projects shipped", "public repos", etc. */
+  font-weight: 600;
     }
+
+    html.light .stat-item {
+  border-right-color: rgba(10, 10, 31, 0.15) !important;
+}
+
+  html.light .stats-row {
+  border-color: rgba(10, 10, 31, 0.15) !important;
+}
+
+html.light .skill-tag {
+  font-weight: 600;
+}
 
     html.light #cursor-ring {
       border-color: rgba(212, 31, 35, 0.5);
@@ -2568,6 +2603,7 @@
           </div>
 
           <!-- Tools -->
+          <!-- Tools -->
           <div class="skill-group reveal reveal-delay-3">
             <div class="skill-group-header">
               <span class="skill-group-dot" style="background:var(--blue);box-shadow:0 0 6px var(--blue);"></span>
@@ -2575,24 +2611,17 @@
               <div class="skill-group-line" style="background:rgba(26,79,255,0.2);"></div>
             </div>
             <div class="skill-tags">
-              <span class="skill-tag"
-                style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Git</span>
-              <span class="skill-tag"
-                style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Docker</span>
-              <span class="skill-tag"
-                style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Linux</span>
-              <span class="skill-tag"
-                style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Postman</span>
-              <span class="skill-tag"
-                style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Vercel</span>
-              <span class="skill-tag"
-                style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">VS
-                Code</span>
-              <!-- <span class="skill-tag" style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">JWT</span> -->
-              <!-- <span class="skill-tag" style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Solidity</span> -->
-              <!-- <span class="skill-tag" style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Hardhat</span> -->
+              <span class="skill-tag" style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Git</span>
+              <span class="skill-tag" style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Docker</span>
+              <span class="skill-tag" style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Linux</span>
+              <span class="skill-tag" style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Postman</span>
+              <span class="skill-tag" style="color:var(--blue);border-color:rgba(26,79,255,0.3);background:rgba(26,79,255,0.05);">Vercel</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
           <!-- Currently Learning -->
           <!-- <div class="learning-section reveal reveal-delay-4" > -->
@@ -2632,18 +2661,18 @@
       style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:48px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);">
       <span style="font-family:var(--font-pixel);font-size:6.5px;color:rgba(255,255,255,0.25);letter-spacing:0.06em;">
         <span
-          style="font-family:var(--font-display);font-size:20px;color:var(--red);vertical-align:middle;">10</span>&nbsp;
-        projects shipped
+          style="font-family:var(--font-display);font-size:20px;color:var(--red);vertical-align:middle;">10 projects shipped</span>&nbsp;
+        
       </span>
       <span style="font-family:var(--font-pixel);font-size:6.5px;color:rgba(255,255,255,0.25);letter-spacing:0.06em;">
         <span
-          style="font-family:var(--font-display);font-size:20px;color:var(--yellow);vertical-align:middle;">6</span>&nbsp;
-        languages
+          style="font-family:var(--font-display);font-size:20px;color:var(--yellow);vertical-align:middle;">6 languages</span>&nbsp;
+        
       </span>
       <span style="font-family:var(--font-pixel);font-size:6.5px;color:rgba(255,255,255,0.25);letter-spacing:0.06em;">
         <span
-          style="font-family:var(--font-display);font-size:20px;color:var(--blue);vertical-align:middle;">30+</span>&nbsp;
-        public repos
+          style="font-family:var(--font-display);font-size:20px;color:var(--blue);vertical-align:middle;">30+  public repos</span>&nbsp;
+       
       </span>
     </div>
 
